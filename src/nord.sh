@@ -27,7 +27,7 @@ append_profile_uuid_to_list() {
 # @since 0.2.0
 apply() {
   local \
-    nord0="#2E3440" \
+    nord0="#1E222A" \
     nord1="#3B4252" \
     nord3="#4C566A" \
     nord4="#D8DEE9" \
@@ -368,7 +368,7 @@ _ctb_warning="\e[1;33m"
 NORD_GNOME_TERMINAL_SCRIPT_OPTS=$(getopt -o hl:p: --long help,loglevel:,profile: -n 'nord.sh' -- "$@")
 NORD_GNOME_TERMINAL_VERSION=0.1.0
 NORD_GNOME_TERMINAL_VERSION_DCONF_KEY=nord-gnome-terminal-version
-NORD_PROFILE_VISIBLE_NAME="Nord"
+NORD_PROFILE_VISIBLE_NAME="nv-Nord"
 log_level=2
 
 # List of required executable dependencies
@@ -400,7 +400,7 @@ while true; do
 done
 
 if validate_dependencies DEPENDENCIES[@]; then
-  
+
   if ! check_migrated_version_comp; then
     log 0 "The installed GNOME Terminal version '$gnome_terminal_version' is not compatible with the required (dconf migrated) version >= 3.8!"
     exit 1
